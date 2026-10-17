@@ -6,7 +6,7 @@ import { defineConfig, loadEnv } from 'vite';
  *
  * Enabled only when:
  *  - running `vite` dev server, OR
- *  - VITE_PREMIUM_DEV_PREVIEW=true AND the build is NOT a Vercel production build.
+ *  - VITE_PREMIUM_DEV_PREVIEW=true AND VERCEL_ENV=preview explicitly.
  *
  * A production deployment (VERCEL_ENV=production) can never ship the preview unlock,
  * even if the env var is set by mistake. Real premium access must come from a
@@ -14,9 +14,9 @@ import { defineConfig, loadEnv } from 'vite';
  */
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const isProdDeploy = (process.env.VERCEL_ENV ?? env.VERCEL_ENV) === 'production';
+  const deployEnv = process.env.VERCEL_ENV ?? env.VERCEL_ENV;
   const wantsPreview = (process.env.VITE_PREMIUM_DEV_PREVIEW ?? env.VITE_PREMIUM_DEV_PREVIEW) === 'true';
-  const premiumPreview = command === 'serve' || (wantsPreview && !isProdDeploy);
+  const premiumPreview = command === 'serve' || (wantsPreview && deployEnv === 'preview');
 
   return {
     define: {

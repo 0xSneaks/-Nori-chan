@@ -96,7 +96,7 @@ export class GameHost {
 
     this.renderer = new Renderer(this.canvas);
     this.sfx = new Sfx(this.settings.muted);
-    this.input = new Input(this.canvas);
+    this.input = new Input(this.canvas, this.root);
     this.input.on((a) => this.onAction(a));
     this.world = new World({ mode: 'free' });
 
@@ -185,16 +185,18 @@ export class GameHost {
 
   private loop(now: number): void {
     if (!this.open) return;
-    const dt = Math.min(0.05, Math.max(0, (now - this.last) / 1000));
+    let dt = Math.max(0, (now - this.last) / 1000);
     this.last = now;
 
     if (this.phase === 'countdown') {
+      const remaining = this.countdownLeft;
       const before = Math.ceil(this.countdownLeft);
       this.countdownLeft -= dt;
       const after = Math.ceil(this.countdownLeft);
       this.renderer.countdown = this.countdownLeft;
       if (after !== before && after > 0) this.sfx.countdown(false);
       if (this.countdownLeft <= 0) {
+        dt = Math.max(0, dt - remaining);
         this.renderer.countdown = null;
         this.phase = 'playing';
         this.sfx.countdown(true);
@@ -216,7 +218,7 @@ export class GameHost {
       if (this.world.finished) this.gameOver();
     }
 
-    this.renderer.render(this.world, dt, this.phase === 'playing');
+    this.renderer.render(this.world, Math.min(0.05, dt), this.phase === 'playing');
     this.raf = requestAnimationFrame((t) => this.loop(t));
   }
 
@@ -311,9 +313,12 @@ export class GameHost {
     this.hidePanel();
     this.phase = 'countdown';
     this.countdownLeft = 3;
+    this.renderer.countdown = this.countdownLeft;
     this.fireworkTimer = 0.5;
     this.sfx.countdown(false);
     this.pauseBtn.disabled = false;
+    this.pauseBtn.setAttribute('aria-label', 'Pause');
+    this.pauseBtn.innerHTML = '<span aria-hidden="true">Ⅱ</span>';
     this.canvas.focus?.();
     this.announce(this.mode === 'festival' ? 'Sakura Night Festival starting' : 'Run starting in 3 seconds');
   }
@@ -321,6 +326,7 @@ export class GameHost {
   private pause(): void {
     if (this.phase !== 'playing' && this.phase !== 'countdown') return;
     this.phase = 'paused';
+    this.renderer.countdown = null;
     this.sfx.stopMusic();
     this.pauseBtn.setAttribute('aria-label', 'Resume');
     this.pauseBtn.innerHTML = '<span aria-hidden="true">▶</span>';
@@ -405,6 +411,7 @@ export class GameHost {
 
   private showMenu(): void {
     this.phase = 'menu';
+    this.renderer.countdown = null;
     this.sfx.stopMusic();
     this.pauseBtn.disabled = true;
     const festival = this.mode === 'festival';
@@ -527,7 +534,10 @@ export class GameHost {
     if (!focusables.length) return;
     const first = focusables[0]!;
     const last = focusables[focusables.length - 1]!;
-    if (e.shiftKey && document.activeElement === first) {
+    if (!focusables.includes(document.activeElement as HTMLElement)) {
+      e.preventDefault();
+      (e.shiftKey ? last : first).focus();
+    } else if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
       last.focus();
     } else if (!e.shiftKey && document.activeElement === last) {
