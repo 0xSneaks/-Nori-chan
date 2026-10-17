@@ -17,7 +17,7 @@ export const PHRASES = {
   ganbatte: { jp: 'がんばって！', romaji: 'Ganbatte!', en: 'Do your best!' },
   otsukare: { jp: 'おつかれさま！', romaji: 'Otsukaresama!', en: 'Great work!' },
   matsuri: { jp: 'おまつりだ！', romaji: 'Omatsuri da!', en: "It's festival time!" },
-  suzu: { jp: 'すず！', romaji: 'Suzu!', en: 'Magnet bell!' },
+  suzu: { jp: 'すず！', romaji: 'Suzu!', en: 'Bell!' },
   jikan: { jp: 'じかん＋3', romaji: 'Jikan +3', en: '+3 seconds!' },
   pause: { jp: 'ひとやすみ', romaji: 'Hitoyasumi', en: 'Taking a break' },
 } as const satisfies Record<string, Phrase>;

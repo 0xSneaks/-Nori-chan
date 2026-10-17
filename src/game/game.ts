@@ -412,7 +412,7 @@ export class GameHost {
     const costumePicker = festival ? this.costumePickerHtml() : '';
     this.showPanel(`
       <div class="gp-card">
-        <p class="gp-mode">${festival ? '🏮 さくらよるまつり · Sakura Night Festival' : '🌸 Free play · むりょう'}</p>
+        <p class="gp-mode">${festival ? '🏮 夜桜まつり · Sakura Night Festival' : '🌸 Free play · むりょう'}</p>
         <h2 class="gp-logo">こいぬコロコロ！<span>Koinu Korokoro!</span></h2>
         ${festival ? `<p class="gp-note">${escapeHtml(this.opts.festivalLabel())}</p>` : ''}
         <ol class="gp-howto">
@@ -425,7 +425,7 @@ export class GameHost {
         ${costumePicker}
         <p class="gp-best-line">Best: <b>${best.toLocaleString('en-US')}</b> · 60-second run · <span class="kbd-hint">Keys: ←/→ A/D move · Space/↑ hop · P pause · M mute</span></p>
         <div class="gp-actions">
-          <button type="button" class="btn btn-primary btn-big" data-act="start">${PHRASES.ganbatte.jp} Start!</button>
+          <button type="button" class="btn btn-primary btn-big" data-act="start">はじめる！ Start!</button>
           <button type="button" class="btn btn-ghost" data-act="close">Back to shop</button>
         </div>
       </div>`);
