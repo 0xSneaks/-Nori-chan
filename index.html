@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffd6e0" />
+    <title>のりちゃん × こいぬ — Koinu Korokoro!</title>
+    <meta
+      name="description"
+      content="Koinu Korokoro! — roll through Nori-chan's sushi town, collect sushi, dodge wasabi. A free kawaii arcade game in your browser."
+    />
+    <meta property="og:title" content="のりちゃん × こいぬ — Koinu Korokoro!" />
+    <meta property="og:description" content="A free kawaii sushi-town arcade game. 60-second runs, combos, sakura everywhere." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="sakura" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Nori-chan × Koinu home">
+        <span class="brand-jp">のりちゃん × こいぬ</span>
+        <span class="brand-en">Nori-chan × Koinu</span>
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#play">Play</a></li>
+          <li><a href="#festival">Festival</a></li>
+          <li><a href="#how">How to Play</a></li>
+          <li><a href="#token">$SUSHI</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="lantern-string" aria-hidden="true">
+      <span class="lantern"></span><span class="lantern l2"></span><span class="lantern"></span><span class="lantern l2"></span
+      ><span class="lantern"></span><span class="lantern l2"></span><span class="lantern"></span>
+    </div>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">のり寿司 · Nori Sushi · est. today</p>
+          <h1>
+            <span class="title-jp">こいぬコロコロ！</span>
+            <span class="title-en">Koinu Korokoro!</span>
+          </h1>
+          <p class="lede">
+            Roll through Nori-chan’s little sushi town as <b>Koinu</b>, her round puppy. Gobble sushi, dodge wasabi,
+            chain combos — sixty seconds, as many plates as you can.
+          </p>
+          <div class="cta-row">
+            <button type="button" class="btn btn-primary btn-big" data-play="free">
+              <span aria-hidden="true">🌸</span> Play Free
+            </button>
+            <a class="btn btn-ghost" href="#festival"><span aria-hidden="true">🏮</span> Sakura Night Festival</a>
+          </div>
+          <p class="fine">No wallet. No account. Works on your phone.</p>
+        </div>
+        <div class="hero-art" aria-hidden="false">
+          <div class="noren" aria-hidden="true"><span>の</span><span>り</span><span>寿</span><span>司</span></div>
+          <img class="nori" src="/assets/nori-chan.svg" alt="Nori-chan holding a tray of sushi" width="260" height="320" />
+          <figure class="koinu-fig">
+            <img class="koinu" src="/assets/koinu-placeholder.svg" alt="Koinu the puppy (temporary placeholder art)" width="170" height="170" />
+            <figcaption class="temp-tag">Temp art — original Koinu image pending</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="section story" id="story" aria-labelledby="story-h">
+        <h2 id="story-h"><span class="jp">おはなし</span> Story</h2>
+        <div class="story-grid">
+          <div class="card story-card">
+            <p>
+              Every morning <b>Nori-chan</b> rolls up the shutter of her tiny sushi shop, ties on her headband, and
+              lays out the day’s plates. Every morning <b>Koinu</b> — her very round, very hungry puppy — rolls right
+              out the door after them.
+            </p>
+            <p>
+              Down the lantern-lit street he goes, <i>korokoro, korokoro</i>, scooping up runaway nigiri while dodging
+              grumpy wasabi and the yatai carts of the morning market. Help him bring home as much sushi as he can before
+              the shop opens!
+            </p>
+          </div>
+          <ul class="vocab" aria-label="Words to know">
+            <li class="card"><span class="kanji">海苔</span><span class="kana">のり · nori</span><span class="en">edible seaweed</span></li>
+            <li class="card"><span class="kanji">子犬</span><span class="kana">こいぬ · koinu</span><span class="en">puppy</span></li>
+            <li class="card"><span class="kanji">ころころ</span><span class="kana">korokoro</span><span class="en">the sound of rolling</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PLAY FREE -->
+      <section class="section play" id="play" aria-labelledby="play-h">
+        <h2 id="play-h"><span class="jp">あそぶ</span> Play Free</h2>
+        <div class="card play-card">
+          <div class="play-copy">
+            <h3>The complete arcade game — free forever</h3>
+            <ul class="ticks">
+              <li>60-second runs with combos up to ×4</li>
+              <li>Swipe &amp; tap on phones, arrow keys on desktop</li>
+              <li>Magnet bells, +3s clocks, golden sushi</li>
+              <li>Local high-score board</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-big" data-play="free">▶ Start rolling</button>
+            <p class="best" data-best="free"></p>
+          </div>
+          <div class="play-preview" aria-hidden="true">
+            <canvas class="mini" data-icon="koinu" width="120" height="120"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREMIUM / FESTIVAL -->
+      <section class="section festival" id="festival" aria-labelledby="fest-h">
+        <h2 id="fest-h"><span class="jp">さくらよるまつり</span> Sakura Night Festival</h2>
+        <div class="card fest-card">
+          <div class="fest-status" data-fest-status>
+            <span class="chip chip-wait">Coming soon · payments not enabled</span>
+          </div>
+          <p class="fest-lede">
+            A separate premium mode: Koinu’s town after dark, paper lanterns aglow and fireworks overhead.
+          </p>
+          <ul class="fest-features">
+            <li><span aria-hidden="true">🎆</span><b>Bonus stages</b> — two golden-sushi rain rounds every run</li>
+            <li><span aria-hidden="true">👘</span><b>Costumes</b> — headband, happi coat, fox mask, yukata ribbon, lantern hat</li>
+            <li><span aria-hidden="true">🏮</span><b>Night stage</b> — new palette, night music, its own leaderboard</li>
+          </ul>
+          <p class="fair">
+            <b>Fair by design:</b> same speed, hitboxes and scoring rules as free play. Costumes are cosmetic only. No
+            loot boxes, no random paid rewards, no gambling.
+          </p>
+          <div class="fest-actions" data-fest-actions>
+            <button type="button" class="btn btn-night" disabled aria-describedby="fest-why">🔒 Unlock festival</button>
+          </div>
+          <p class="fine" id="fest-why" data-fest-why>
+            Checkout is intentionally off until the owner approves a payment provider, price and checkout flow.
+          </p>
+        </div>
+      </section>
+
+      <!-- HOW TO PLAY -->
+      <section class="section how" id="how" aria-labelledby="how-h">
+        <h2 id="how-h"><span class="jp">あそびかた</span> How to Play</h2>
+        <div class="how-grid">
+          <div class="card">
+            <h3>Controls</h3>
+            <table class="controls">
+              <thead>
+                <tr><th scope="col">Action</th><th scope="col">Phone</th><th scope="col">Keyboard</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Roll left / right</th><td>Swipe ← →</td><td>← → or A D</td></tr>
+                <tr><th scope="row">Hop</th><td>Tap or swipe ↑</td><td>Space, ↑ or W</td></tr>
+                <tr><th scope="row">Pause</th><td>Ⅱ button</td><td>P or Esc</td></tr>
+                <tr><th scope="row">Mute</th><td>🔊 button</td><td>M</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h3>Things on the street</h3>
+            <ul class="legend">
+              <li><canvas class="icon" data-icon="maguro" width="56" height="56"></canvas><span><b>Sushi</b> まぐろ · サーモン · たまご · まき — 8–15 pts</span></li>
+              <li><canvas class="icon" data-icon="ikura" width="56" height="56"></canvas><span><b>Ikura</b> いくら — 25 pts</span></li>
+              <li><canvas class="icon" data-icon="golden" width="56" height="56"></canvas><span><b>Golden sushi</b> きんのすし — 50 pts</span></li>
+              <li><canvas class="icon" data-icon="bell" width="56" height="56"></canvas><span><b>Bell</b> すず — sushi magnet for 5s</span></li>
+              <li><canvas class="icon" data-icon="clock" width="56" height="56"></canvas><span><b>Clock</b> — +3 seconds</span></li>
+              <li><canvas class="icon" data-icon="wasabi" width="56" height="56"></canvas><span><b>Wasabi</b> からい！ — hop over it</span></li>
+              <li><canvas class="icon" data-icon="crate" width="56" height="56"></canvas><span><b>Fish crate</b> — hop over it</span></li>
+              <li><canvas class="icon" data-icon="cart" width="56" height="56"></canvas><span><b>Yatai cart</b> — too tall! change lanes</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Combos</h3>
+            <p>Every 5 sushi in a row adds <b>+0.5×</b> to your multiplier, up to <b>×4</b>. Bumping into anything — or going 2.4 seconds without a bite — resets the chain.</p>
+            <p class="phrases">
+              <span>おいしい！<small>Oishii! — Yummy!</small></span>
+              <span>すごい！<small>Sugoi! — Amazing!</small></span>
+              <span>からい！<small>Karai! — Spicy!</small></span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOKEN -->
+      <section class="section token" id="token" aria-labelledby="token-h">
+        <h2 id="token-h"><span class="jp">トークン</span> $SUSHI Token Info</h2>
+        <div class="card token-card">
+          <p><b>$SUSHI</b> is the community companion token branding for Nori-chan × Koinu.</p>
+          <div class="addr-block">
+            <p class="addr-label">Solana address provided by the project owner</p>
+            <div class="addr-row">
+              <code id="token-addr">DfBJCoLnaF75GaKPWB4c3TFyMHcXmAShiuWm3dHNpump</code>
+              <button type="button" class="btn btn-small" data-copy="#token-addr">Copy</button>
+            </div>
+            <p class="chip chip-warn" role="note">⚠ Not independently verified as the $SUSHI contract. Verify the mint yourself before interacting.</p>
+          </div>
+          <ul class="disclaimers">
+            <li>No purchase link is provided until the address is verified.</li>
+            <li>The game is free and never requires a token, wallet or account.</li>
+            <li>Not affiliated with, endorsed by, or partnered with any KOINU project or token.</li>
+            <li>Nothing here is financial advice. Crypto tokens are volatile and can go to zero.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>のりちゃん × こいぬ · Nori-chan and Koinu are original characters. Made with 🍣 and 🌸.</p>
+      <p class="fine">High scores are stored only on your device.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
