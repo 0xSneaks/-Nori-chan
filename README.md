@@ -1,10 +1,18 @@
 # のりちゃん × こいぬ — Nori-chan × Koinu
 
+Nori-chan × Koinu is an original community-inspired $SUSHI companion concept and kawaii arcade game, inspired by the Koinu pairing discussion on October 17, 2026.
+
 **こいぬコロコロ！ Koinu Korokoro!** — a mobile-first kawaii arcade game and the $SUSHI companion storefront.
 
 Koinu, Nori-chan's very round puppy, rolls through her little Japanese sushi town collecting sushi, hopping wasabi and fish crates, dodging tall yatai carts and chaining combos in 60-second runs.
 
 > Nori-chan and Koinu are original characters. This project is **not affiliated with, endorsed by, or partnered with any KOINU project or token.**
+
+## Origin
+
+Someone suggested a Japanese-themed companion for Koinu. Our creator said, “I'll do it.” That's how Nori-chan and her sushi shop joined the story.
+
+Original community-inspired fan project. Not presented as officially affiliated with or endorsed by another KOINU project.
 
 ## Stack
 

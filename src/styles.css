@@ -175,8 +175,8 @@ a {
     justify-content: space-between;
   }
   .site-header nav a {
-    padding: 4px 8px;
-    font-size: 13px;
+    padding: 4px 5px;
+    font-size: 12.5px;
   }
 }
 
@@ -276,11 +276,47 @@ h1 {
   margin: 0 0 12px;
   line-height: 1.05;
 }
+.pairing {
+  margin: 4px 0 6px;
+  font-size: clamp(30px, 5.2vw, 50px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.pairing span {
+  color: var(--pink-deep);
+}
+.subhead {
+  margin: 0 0 14px;
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 800;
+  color: var(--matcha-deep);
+}
+.game-title {
+  margin: 0 0 8px;
+  line-height: 1.05;
+}
+.qualifier {
+  max-width: 34em;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.origin-card {
+  background:
+    radial-gradient(circle at 95% 15%, var(--pink) 0 60px, transparent 61px),
+    #fff;
+}
+.origin-quote {
+  margin: 0 0 8px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 700;
+  max-width: 40em;
+}
 .title-jp {
   display: block;
   font-family: var(--font-jp);
   font-weight: 900;
-  font-size: clamp(36px, 7vw, 62px);
+  font-size: clamp(32px, 6vw, 52px);
   white-space: nowrap;
   color: var(--pink-deep);
   -webkit-text-stroke: 1.5px var(--ink);
@@ -407,22 +443,37 @@ h1 {
   .cta-row {
     justify-content: center;
   }
-  .lede {
+  .lede,
+  .qualifier {
     margin-inline: auto;
   }
   .hero-art {
-    min-height: 250px;
+    min-height: 210px;
     order: -1;
+  }
+  .hero {
+    padding-top: 52px;
+    padding-bottom: 24px;
+  }
+  .game-title .title-jp {
+    font-size: 30px;
+  }
+  .game-title .title-en {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+  .subhead {
+    margin-bottom: 8px;
   }
   .hero-art::before {
     inset: 10% 8% 2%;
   }
   .nori {
-    width: min(190px, 46vw);
+    width: min(160px, 40vw);
     margin-right: 60px;
   }
   .koinu-fig {
-    width: min(130px, 32vw);
+    width: min(112px, 28vw);
     right: 8%;
   }
   .noren {
