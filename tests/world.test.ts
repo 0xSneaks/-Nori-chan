@@ -129,6 +129,13 @@ describe('world: collisions & scoring', () => {
 });
 
 describe('world: run lifecycle', () => {
+  it('substeps a long frame so obstacles cannot tunnel past Koinu', () => {
+    const w = quietWorld();
+    place(w, 'cart', 1, PLAYER_Y - 100);
+    w.update(1);
+    expect(w.elapsed).toBeCloseTo(1);
+    expect(w.drainEvents().some(e => e.type === 'hit')).toBe(true);
+  });
   it('ends after 60 seconds with a timeUp event', () => {
     const w = new World({ mode: 'free', seed: 42 });
     const ev = run(w, RUN_SECONDS + 15);

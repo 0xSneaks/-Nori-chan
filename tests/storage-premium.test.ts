@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { HighScores, Settings, memoryStore, type KeyValueStore } from '../src/game/storage';
 import {
   DevPreviewProvider,
@@ -88,8 +88,18 @@ describe('premium entitlements', () => {
 
   it('client storage cannot grant premium', async () => {
     // Even if someone writes a fake flag into storage, the provider ignores it.
-    globalThis.localStorage?.setItem?.('premium', 'true');
-    expect((await createEntitlements(false).getStatus()).festival).toBe(false);
+    const store = memoryStore();
+    store.setItem('premium', 'true');
+    store.setItem('festival', 'true');
+    store.setItem('paymentVerified', 'true');
+    vi.stubGlobal('localStorage', store);
+    vi.stubGlobal('location', { search: '?premium=true&paymentVerified=true', hash: '#festival-play' });
+    try {
+      expect((await createEntitlements(false).getStatus()).festival).toBe(false);
+      expect((await createEntitlements(false).startCheckout()).ok).toBe(false);
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });
 

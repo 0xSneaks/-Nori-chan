@@ -53,6 +53,7 @@ npm install
 npm run dev        # local dev (festival dev preview is ON in dev)
 npm test           # unit tests
 npm run typecheck
+npm run test:premium-build # compare actual production/preview bundle hashes
 npm run build      # typecheck + production build -> dist/
 npm run preview    # serve the production build
 ```
@@ -86,6 +87,7 @@ npm run preview    # serve the production build
 - always in `npm run dev`;
 - on Vercel **preview** builds when `VITE_PREMIUM_DEV_PREVIEW=true`;
 - **never** on Vercel production builds (`VERCEL_ENV=production` forces it off in `vite.config.ts`).
+- Flagged static builds without explicit `VERCEL_ENV=preview` also stay locked.
 
 **Before turning on real purchases** (needs owner approval of provider, price and checkout flow):
 1. Implement `ServerEntitlementProvider`: hosted checkout → provider webhook (signature verified server-side) → entitlement stored server-side → short-lived signed token/session the client presents.
@@ -106,7 +108,15 @@ The site shows the Solana address provided by the owner — `DfBJCoLnaF75GaKPWB4
 `vercel.json` pins the build (`npm run build` → `dist`) and adds security headers (CSP, nosniff, referrer and permissions policies).
 
 1. Vercel → **Add New → Project** → import `0xSneaks/-Nori-chan`.
-2. Framework preset: **Vite** (auto). Build: `npm run build`. Output: `dist`. Node 20+.
+2. Framework preset: **Vite** (auto). Build: `npm run build`. Output: `dist`. Node 22.12+ (CI uses Node 22).
 3. Optional, Preview environment only: `VITE_PREMIUM_DEV_PREVIEW=true` to play-test the festival. Do **not** set it for Production (it is ignored there anyway).
 4. Deploy → open the **preview** URL and test on a phone.
 5. Promote to production only after owner approval.
+
+## Quality checks
+
+`npm run check` runs TypeScript, deterministic simulation tests and DOM integration tests, then builds the site. DOM tests cover dialog input scope, keyboard/pointer gestures, pause/resume, restart, countdown cleanup, focus wrapping, full-run score persistence, the locked festival entry point, and high-DPI icon repaints. Only canvas/audio output is mocked in the host tests; they are not browser rendering or real-device tests.
+
+`npm run test:premium-build` verifies actual production output is byte-identical with the preview flag on/off, checks unscoped and development-target static builds stay locked, verifies the explicit preview output differs, and leaves locked production output in `dist`. GitHub Actions runs both commands plus a dependency audit. Real Android/iPhone touch, Safari audio, small-screen menu scrolling and rendered frame rate still require browser/device smoke tests before release. The menu allows vertical scrolling while the canvas owns gameplay gestures.
+
+Only hashed Vite entry assets receive the one-year immutable cache header; the documented unversioned mascot images must remain revalidatable.

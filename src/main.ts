@@ -73,7 +73,9 @@ renderBest();
 function paintIcons(): void {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   document.querySelectorAll<HTMLCanvasElement>('canvas[data-icon]').forEach((c) => {
-    const size = Number(c.getAttribute('width')) || 56;
+    // The width attribute becomes the backing-store size after the first paint.
+    const size = Number(c.dataset.iconSize ?? c.getAttribute('width')) || 56;
+    c.dataset.iconSize = String(size);
     c.style.width = `${size}px`;
     c.style.height = `${size}px`;
     c.width = size * dpr;

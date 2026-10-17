@@ -150,8 +150,16 @@ export class World {
   // ---------- simulation ----------
 
   update(dt: number): void {
-    if (this.finished) return;
-    dt = Math.min(dt, 1 / 20);
+    if (!Number.isFinite(dt) || dt <= 0) return;
+    // Keep collision steps small without discarding wall time on slow phones.
+    while (dt > 0 && !this.finished) {
+      const step = Math.min(dt, 1 / 20);
+      this.step(step);
+      dt -= step;
+    }
+  }
+
+  private step(dt: number): void {
     this.elapsed += dt;
     this.timeLeft -= dt;
 

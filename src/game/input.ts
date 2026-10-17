@@ -30,19 +30,20 @@ export class Input {
   private didSwipe = false;
   private readonly disposers: Array<() => void> = [];
 
-  constructor(surface: HTMLElement) {
+  constructor(surface: HTMLElement, keyboardScope: HTMLElement = surface) {
     const onKey = (e: KeyboardEvent) => {
       const action = KEYMAP[e.code];
       if (!action) return;
       // Leave Enter/Space alone on focused buttons so DOM menus stay keyboard-accessible.
       const target = e.target as HTMLElement | null;
+      if (target?.closest('input, select, textarea, [contenteditable]:not([contenteditable="false"])')) return;
       if ((action === 'confirm' || e.code === 'Space') && target?.closest('button, a, input, select, textarea')) return;
       if (e.repeat && action !== 'left' && action !== 'right') return;
       e.preventDefault();
       this.emit(action);
     };
-    window.addEventListener('keydown', onKey);
-    this.disposers.push(() => window.removeEventListener('keydown', onKey));
+    keyboardScope.addEventListener('keydown', onKey);
+    this.disposers.push(() => keyboardScope.removeEventListener('keydown', onKey));
 
     const down = (e: PointerEvent) => {
       if (this.pointerId !== null) return;
