@@ -404,16 +404,6 @@ h1 {
   height: auto;
   animation: roll 2.2s ease-in-out infinite;
 }
-.temp-tag {
-  display: inline-block;
-  margin-top: -6px;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 800;
-  background: #fff36b;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-}
 @keyframes bob {
   50% {
     transform: translateY(-8px);

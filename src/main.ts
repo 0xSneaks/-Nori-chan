@@ -3,6 +3,7 @@ import { GameHost } from './game/game';
 import { HighScores, browserStore } from './game/storage';
 import { drawBell, drawCart, drawClock, drawCrate, drawKoinu, drawSushi, drawWasabi } from './game/sprites';
 import type { SushiKind } from './game/config';
+import { loadKoinuArt } from './game/assets';
 import { createEntitlements, type EntitlementStatus } from './premium/entitlements';
 import { startSakura } from './site/sakura';
 
@@ -106,7 +107,7 @@ function paintIcons(): void {
         drawClock(ctx, 26, 30, 0);
         break;
       case 'koinu':
-        drawKoinu(ctx, 28, 36, { t: 0, roll: 0, z: 0, stunned: false, jumping: false, costume: 'hachimaki' }, 0.8);
+        drawKoinu(ctx, 28, 36, { t: 0, roll: 0, z: 0, stunned: false, jumping: false, costume: 'none', art: loadKoinuArt() }, 0.8);
         break;
       default:
         drawSushi(ctx, icon as SushiKind, 28, 30, 0.4);
@@ -114,6 +115,8 @@ function paintIcons(): void {
   });
 }
 document.fonts?.ready.then(paintIcons).catch(paintIcons);
+// Repaint the Koinu icon once the original art has loaded.
+loadKoinuArt(paintIcons);
 paintIcons();
 
 // Festival status

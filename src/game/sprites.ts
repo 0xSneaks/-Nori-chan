@@ -77,7 +77,10 @@ export function drawKoinu(ctx: Ctx, x: number, y: number, pose: KoinuPose, scale
   ctx.scale(1 / squash, squash);
 
   if (pose.art) {
-    ctx.drawImage(pose.art, -R * 1.3, -R * 1.3, R * 2.6, R * 2.6);
+    // Gentle side-to-side wobble reads as rolling without turning his face upside down.
+    const wobble = pose.stunned ? Math.sin(pose.t * 40) * 0.12 : pose.jumping ? 0 : Math.sin(pose.roll / 14) * 0.18;
+    ctx.rotate(wobble);
+    ctx.drawImage(pose.art, -R * 1.15, -R * 1.15, R * 2.3, R * 2.3);
     drawCostume(ctx, pose.costume, R, pose.t);
     ctx.restore();
     return;

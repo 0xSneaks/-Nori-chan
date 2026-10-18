@@ -96,8 +96,7 @@ npm run preview    # serve the production build
 ## Art
 
 - **Nori-chan:** original SVG at `public/assets/nori-chan.svg`.
-- **Koinu:** the original puppy image has **not** been supplied. The site shows `public/assets/koinu-placeholder.svg` (visibly labelled TEMP ART) and the game draws Koinu procedurally.
-  To use the original: add `public/assets/koinu.png` (square, transparent, ~512 px), set `KOINU_ART_URL = '/assets/koinu.png'` in `src/game/assets.ts`, and replace the placeholder `<img>` in `index.html`.
+- **Koinu:** the owner's original puppy image, `public/assets/koinu.webp` (512 px, transparent; reference hand-off on `grok/graphics`, issue #8). The game falls back to a procedural Koinu if it fails to load.
 
 ## $Nori-Chan token
 
