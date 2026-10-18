@@ -36,7 +36,15 @@ export type SpriteKey =
   | 'sushi-golden'
   | 'bell'
   | 'clock'
-  | 'crate';
+  | 'crate'
+  | 'wasabi'
+  | 'cart'
+  | 'shop-left-day'
+  | 'shop-right-day'
+  | 'shop-left-night'
+  | 'shop-right-night'
+  | 'stone-day'
+  | 'stone-night';
 
 const SPRITE_KEYS: SpriteKey[] = [
   'sushi-maguro',
@@ -48,6 +56,14 @@ const SPRITE_KEYS: SpriteKey[] = [
   'bell',
   'clock',
   'crate',
+  'wasabi',
+  'cart',
+  'shop-left-day',
+  'shop-right-day',
+  'shop-left-night',
+  'shop-right-night',
+  'stone-day',
+  'stone-night',
 ];
 
 const sprites = new Map<SpriteKey, HTMLImageElement>();
@@ -59,7 +75,7 @@ export function preloadSprites(onAnyLoad?: () => void): void {
     const img = new Image();
     img.decoding = 'async';
     if (onAnyLoad) img.addEventListener('load', onAnyLoad, { once: true });
-    img.src = `${import.meta.env.BASE_URL}assets/sprites/${key}.png`;
+    img.src = `${import.meta.env.BASE_URL}assets/sprites/${key}.webp`;
     sprites.set(key, img);
   }
 }

@@ -364,7 +364,7 @@ h1 {
   position: absolute;
   top: 8%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -62%);
   display: flex;
   gap: 4px;
   z-index: 1;
@@ -467,7 +467,7 @@ h1 {
     right: 8%;
   }
   .noren {
-    top: 9%;
+    top: 10%;
   }
   .noren span {
     width: 30px;

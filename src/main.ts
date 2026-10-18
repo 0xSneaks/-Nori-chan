@@ -88,12 +88,17 @@ function paintIcons(): void {
     ctx.setTransform(dpr * s, 0, 0, dpr * s, 0, 0);
     const pack: Record<string, [SpriteKey, number]> = {
       maguro: ['sushi-maguro', 44], ikura: ['sushi-ikura', 44], golden: ['sushi-golden', 52],
-      bell: ['bell', 48], clock: ['clock', 42], crate: ['crate', 50],
+      bell: ['bell', 48], clock: ['clock', 42], crate: ['crate', 50], wasabi: ['wasabi', 46],
     };
     const p = pack[icon];
     const im = p ? sprite(p[0]) : null;
     if (p && im) {
       ctx.drawImage(im, 28 - p[1] / 2, 28 - p[1] / 2, p[1], p[1]);
+      return;
+    }
+    const cartIm = icon === 'cart' ? sprite('cart') : null;
+    if (cartIm) {
+      ctx.drawImage(cartIm, 8, 3, 40, 50);
       return;
     }
     switch (icon) {
