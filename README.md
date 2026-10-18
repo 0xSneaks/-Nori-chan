@@ -101,7 +101,7 @@ npm run preview    # serve the production build
 
 ## $SUSHI token
 
-The site shows the Solana address provided by the owner — `DfBJCoLnaF75GaKPWB4c3TFyMHcXmAShiuWm3dHNpump` — labelled **not independently verified**. There is no purchase button or link. Add one only after the mint is verified.
+**$SUSHI has not launched; no mint is published.** The address `DfBJCoLnaF75GaKPWB4c3TFyMHcXmAShiuWm3dHNpump` is shown only as a **KOINU reference** (reported by third-party indexes as the KOINU mint; not verified on-chain here) and is never presented as $SUSHI. "Pairing" means community branding, not a liquidity pool. No purchase links for any token (see #5).
 
 ## Deploy to Vercel
 

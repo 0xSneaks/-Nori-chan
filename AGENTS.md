@@ -15,7 +15,7 @@ Source of truth: control room issue #1. Each seat owns one area; post **BUILT / 
 - Never commit to `main`. No merge, production deploy, payment activation, spending or token transaction without owner approval.
 - Don't push to another seat's branch. Propose changes as a PR into it or as an issue comment.
 - Report real commands and results only.
-- No "first ever", "official" or partnership claims about KOINU (see #5). The $SUSHI address stays labelled unverified, with no buy link.
+- No "first ever", "official" or partnership claims about KOINU (see #5). $SUSHI has no published mint; the `DfBJ…pump` address is a KOINU reference only, never $SUSHI. No buy links.
 
 ## Where things live
 

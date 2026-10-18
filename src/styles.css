@@ -786,6 +786,21 @@ h1 {
   font-size: 11px;
 }
 
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 18px;
+  margin-bottom: 16px;
+}
+.token-card {
+  min-width: 0;
+}
+.token-card h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
 .token-card p {
   margin-top: 0;
 }
