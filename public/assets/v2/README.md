@@ -6,13 +6,15 @@ No ticker is drawn on any file. The ticker, when copy needs a name, is **$Nori-C
 
 `koinu.png` (512×512) is the reference already on this branch: the owner's round orange puppy. Do not replace it.
 
+Painted extras, including the homepage Nori-chan, are in [grok/](grok/README.md).
+
 | PNG | Size | Notes |
 | --- | --- | --- |
 | nori-chan.png | 1024×1280 | Pink kimono, matcha apron with のり, white hachimaki, tray of three nigiri. Transparent. |
 | koinu/idle.png, koinu/roll-1.png … roll-4.png | 256×256 | Same puppy as `koinu.png`. Roll-1 and roll-3 squash; roll-2 and roll-4 turn ±14°. |
 | sushi/maguro salmon tamago maki ikura golden .png | 128×128 | Tiny faces, ink outlines. Transparent. |
-| hazards/wasabi.png, crate.png | 128×128 | Crate is marked 魚. |
-| hazards/cart.png | 160×200 | Taller than the crate. Noren says すし. Lantern on the roof. |
+| hazards/wasabi.png, crate.png | 128×128 | Wasabi outline is fully inside the canvas. Crate is marked 魚. |
+| hazards/cart.png | 160×200 | Taller than the crate. Noren すし is painted from IPA Gothic glyphs. Lantern on the roof. |
 | powerups/bell.png, clock.png | 128×128 | Bell, and a clock marked +3. |
 | street/shop-left-day.png, shop-right-day.png | 64×340 | Day lane edges. Top and bottom bands match so the strip can repeat. |
 | street/shop-left-night.png, shop-right-night.png | 64×340 | 夜桜まつり edges, lantern lit. |
