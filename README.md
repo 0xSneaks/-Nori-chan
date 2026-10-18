@@ -1,8 +1,8 @@
 # のりちゃん × こいぬ — Nori-chan × Koinu
 
-Nori-chan × Koinu is an original community-inspired $SUSHI companion concept and kawaii arcade game, inspired by the Koinu pairing discussion on October 17, 2026.
+Nori-chan × Koinu is an original community-inspired companion concept, with its own $Nori-Chan token (not launched), and a kawaii arcade game, inspired by the Koinu pairing discussion on October 17, 2026.
 
-**こいぬコロコロ！ Koinu Korokoro!** — a mobile-first kawaii arcade game and the $SUSHI companion storefront.
+**こいぬコロコロ！ Koinu Korokoro!** — a mobile-first kawaii arcade game and the Nori-chan × Koinu storefront.
 
 Koinu, Nori-chan's very round puppy, rolls through her little Japanese sushi town collecting sushi, hopping wasabi and fish crates, dodging tall yatai carts and chaining combos in 60-second runs.
 
@@ -99,9 +99,9 @@ npm run preview    # serve the production build
 - **Koinu:** the original puppy image has **not** been supplied. The site shows `public/assets/koinu-placeholder.svg` (visibly labelled TEMP ART) and the game draws Koinu procedurally.
   To use the original: add `public/assets/koinu.png` (square, transparent, ~512 px), set `KOINU_ART_URL = '/assets/koinu.png'` in `src/game/assets.ts`, and replace the placeholder `<img>` in `index.html`.
 
-## $SUSHI token
+## $Nori-Chan token
 
-**$SUSHI has not launched; no mint is published.** The address `DfBJCoLnaF75GaKPWB4c3TFyMHcXmAShiuWm3dHNpump` is shown only as a **KOINU reference** (reported by third-party indexes as the KOINU mint; not verified on-chain here) and is never presented as $SUSHI. "Pairing" means community branding, not a liquidity pool. No purchase links for any token (see #5).
+**$Nori-Chan has not launched; no mint is published.** The address `DfBJCoLnaF75GaKPWB4c3TFyMHcXmAShiuWm3dHNpump` is shown only as a **KOINU reference** (reported by third-party indexes as the KOINU mint; not verified on-chain here) and is never presented as $Nori-Chan. "Pairing" means community branding, not a liquidity pool. No purchase links for any token (see #5).
 
 ## Deploy to Vercel
 

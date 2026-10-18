@@ -2,7 +2,7 @@
   "name": "nori-chan-koinu",
   "private": true,
   "version": "1.0.0",
-  "description": "のりちゃん × こいぬ — Koinu Korokoro! A kawaii sushi-town arcade game and $SUSHI companion site.",
+  "description": "のりちゃん × こいぬ — Koinu Korokoro! A kawaii sushi-town arcade game and the Nori-chan × Koinu site.",
   "type": "module",
   "scripts": {
     "dev": "vite",
