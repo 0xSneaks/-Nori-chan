@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="t d">
+  <title id="t">Koinu (temporary placeholder art)</title>
+  <desc id="d">Temporary stand-in for the original Koinu puppy image, which has not been supplied yet.</desc>
+  <ellipse cx="120" cy="206" rx="66" ry="12" fill="#4a3036" opacity=".15"/>
+  <g stroke="#4a3036" stroke-width="5" stroke-linejoin="round">
+    <ellipse cx="62" cy="86" rx="22" ry="38" fill="#e9a86b" transform="rotate(32 62 86)"/>
+    <ellipse cx="178" cy="86" rx="22" ry="38" fill="#e9a86b" transform="rotate(-32 178 86)"/>
+    <path d="M186 160 q30 -6 26 -30" fill="none" stroke-linecap="round"/>
+    <circle cx="120" cy="128" r="74" fill="#fff6e8"/>
+  </g>
+  <ellipse cx="80" cy="168" rx="22" ry="14" fill="#f4c28a"/>
+  <ellipse cx="166" cy="92" rx="18" ry="12" fill="#f4c28a"/>
+  <circle cx="120" cy="128" r="74" fill="none" stroke="#4a3036" stroke-width="5"/>
+  <ellipse cx="120" cy="152" rx="32" ry="23" fill="#fff"/>
+  <ellipse cx="94" cy="126" rx="9" ry="11" fill="#4a3036"/>
+  <ellipse cx="146" cy="126" rx="9" ry="11" fill="#4a3036"/>
+  <circle cx="97" cy="122" r="3.4" fill="#fff"/>
+  <circle cx="149" cy="122" r="3.4" fill="#fff"/>
+  <ellipse cx="120" cy="143" rx="7" ry="5" fill="#4a3036"/>
+  <path d="M108 152 a6 6 0 0 0 12 0 a6 6 0 0 0 12 0" fill="none" stroke="#4a3036" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="74" cy="146" rx="11" ry="7" fill="#ff8096" opacity=".55"/>
+  <ellipse cx="166" cy="146" rx="11" ry="7" fill="#ff8096" opacity=".55"/>
+  <g transform="rotate(-18 120 120)">
+    <rect x="18" y="20" width="132" height="30" rx="8" fill="#fff36b" stroke="#4a3036" stroke-width="3"/>
+    <text x="84" y="41" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#4a3036">TEMP ART</text>
+  </g>
+</svg>
