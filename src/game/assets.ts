@@ -21,3 +21,50 @@ export function loadKoinuArt(onReady?: () => void): HTMLImageElement | null {
   }
   return koinuImage.complete && koinuImage.naturalWidth > 0 ? koinuImage : null;
 }
+
+/**
+ * Sprite sheet from the issue #8 graphics pack (public/assets/sprites, copied from
+ * grok/graphics public/assets/v2). Each draw falls back to the procedural sprite until
+ * its image has loaded, so the game never shows a blank item.
+ */
+export type SpriteKey =
+  | 'sushi-maguro'
+  | 'sushi-salmon'
+  | 'sushi-tamago'
+  | 'sushi-maki'
+  | 'sushi-ikura'
+  | 'sushi-golden'
+  | 'bell'
+  | 'clock'
+  | 'crate';
+
+const SPRITE_KEYS: SpriteKey[] = [
+  'sushi-maguro',
+  'sushi-salmon',
+  'sushi-tamago',
+  'sushi-maki',
+  'sushi-ikura',
+  'sushi-golden',
+  'bell',
+  'clock',
+  'crate',
+];
+
+const sprites = new Map<SpriteKey, HTMLImageElement>();
+
+export function preloadSprites(onAnyLoad?: () => void): void {
+  if (typeof Image === 'undefined') return;
+  for (const key of SPRITE_KEYS) {
+    if (sprites.has(key)) continue;
+    const img = new Image();
+    img.decoding = 'async';
+    if (onAnyLoad) img.addEventListener('load', onAnyLoad, { once: true });
+    img.src = `${import.meta.env.BASE_URL}assets/sprites/${key}.png`;
+    sprites.set(key, img);
+  }
+}
+
+export function sprite(key: SpriteKey): HTMLImageElement | null {
+  const img = sprites.get(key);
+  return img && img.complete && img.naturalWidth > 0 ? img : null;
+}

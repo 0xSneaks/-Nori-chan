@@ -24,6 +24,7 @@ import {
   INK,
 } from './sprites';
 import { multiplierFor } from './scoring';
+import { preloadSprites, sprite, type SpriteKey } from './assets';
 import type { World } from './world';
 
 interface Particle {
@@ -105,6 +106,7 @@ export class Renderer {
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) throw new Error('Canvas 2D not supported');
     this.ctx = ctx;
+    preloadSprites();
     this.seedAmbient();
   }
 
@@ -370,25 +372,44 @@ export class Renderer {
           ctx.beginPath();
           ctx.ellipse(e.x, e.y + 14, 13, 4, 0, 0, Math.PI * 2);
           ctx.fill();
-          drawSushi(ctx, e.sushi, e.x, e.y + bob, t + e.phase);
+          if (!this.img(`sushi-${e.sushi}` as SpriteKey, e.x, e.y + bob, e.sushi === 'golden' ? 52 : 40)) {
+            drawSushi(ctx, e.sushi, e.x, e.y + bob, t + e.phase);
+          }
           break;
         case 'wasabi':
           drawWasabi(ctx, e.x, e.y, t + e.phase);
           break;
         case 'crate':
-          drawCrate(ctx, e.x, e.y);
+          if (!this.img('crate', e.x, e.y + 2, 60)) drawCrate(ctx, e.x, e.y);
           break;
         case 'cart':
           drawCart(ctx, e.x, e.y, t, this.night);
           break;
         case 'bell':
-          drawBell(ctx, e.x, e.y + bob, t);
+          if (!this.img('bell', e.x, e.y + bob, 46, Math.sin(t * 7) * 0.2)) drawBell(ctx, e.x, e.y + bob, t);
           break;
         case 'clock':
-          drawClock(ctx, e.x, e.y, t);
+          if (!this.img('clock', e.x, e.y + Math.sin(t * 5) * 2, 40)) drawClock(ctx, e.x, e.y, t);
           break;
       }
     }
+  }
+
+  /** Draw a pack sprite centered at (x, y), `size` px square. Returns false if not loaded yet. */
+  private img(key: SpriteKey, x: number, y: number, size: number, rot = 0): boolean {
+    const im = sprite(key);
+    if (!im) return false;
+    const ctx = this.ctx;
+    if (rot) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.drawImage(im, -size / 2, -size / 2, size, size);
+      ctx.restore();
+    } else {
+      ctx.drawImage(im, x - size / 2, y - size / 2, size, size);
+    }
+    return true;
   }
 
   private drawPlayer(world: World): void {
