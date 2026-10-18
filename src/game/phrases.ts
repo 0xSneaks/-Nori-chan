@@ -15,7 +15,7 @@ export const PHRASES = {
   karai: { jp: 'からい！', romaji: 'Karai!', en: 'Spicy!' },
   itai: { jp: 'いたい！', romaji: 'Itai!', en: 'Ouch!' },
   ganbatte: { jp: 'がんばって！', romaji: 'Ganbatte!', en: 'Do your best!' },
-  otsukare: { jp: 'おつかれさま！', romaji: 'Otsukaresama!', en: 'Great work!' },
+  otsukare: { jp: 'おつかれさま！', romaji: 'Otsukaresama!', en: 'Good work!' },
   matsuri: { jp: 'おまつりだ！', romaji: 'Omatsuri da!', en: "It's festival time!" },
   suzu: { jp: 'すず！', romaji: 'Suzu!', en: 'Bell!' },
   jikan: { jp: 'じかん＋3', romaji: 'Jikan +3', en: '+3 seconds!' },

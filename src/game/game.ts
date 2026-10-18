@@ -236,7 +236,7 @@ export class GameHost {
         }
         case 'combo': {
           const ph = comboPhrase(ev.combo);
-          r.showBanner(ph.jp, `${ph.romaji} — ${ph.en} ${ev.combo} combo!`);
+          r.showBanner(ph.jp, `${ph.romaji} — ${ph.en} ${ev.combo} in a row!`);
           this.sfx.fanfare();
           break;
         }
@@ -423,11 +423,11 @@ export class GameHost {
         <h2 class="gp-logo">こいぬコロコロ！<span>Koinu Korokoro!</span></h2>
         ${festival ? `<p class="gp-note">${escapeHtml(this.opts.festivalLabel())}</p>` : ''}
         <ol class="gp-howto">
-          <li><span class="k">← →</span><span><b>Swipe</b> left / right to roll between lanes <small>ころころ = rolling</small></span></li>
+          <li><span class="k">← →</span><span><b>Swipe</b> left or right to roll between lanes</span></li>
           <li><span class="k">↑</span><span><b>Tap</b> or swipe up to hop over wasabi &amp; crates</span></li>
-          <li><span class="k">🍣</span><span>Grab sushi in a row for combos — up to <b>×4</b>!</span></li>
-          <li><span class="k">🏮</span><span>Yatai carts are too tall to hop — <b>change lanes!</b></span></li>
-          ${festival ? '<li><span class="k">🎆</span><span>Bonus stages at 0:18 and 0:40 rain golden sushi</span></li>' : ''}
+          <li><span class="k">🍣</span><span>Grab sushi in a row to build combos, up to <b>×4</b>!</span></li>
+          <li><span class="k">🏮</span><span>Yatai carts are too tall to hop over. <b>Change lanes!</b></span></li>
+          ${festival ? '<li><span class="k">🎆</span><span>Golden sushi rains down in two bonus stages</span></li>' : ''}
         </ol>
         ${costumePicker}
         <p class="gp-best-line">Best: <b>${best.toLocaleString('en-US')}</b> · 60-second run · <span class="kbd-hint">Keys: ←/→ A/D move · Space/↑ hop · P pause · M mute</span></p>

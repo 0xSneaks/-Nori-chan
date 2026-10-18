@@ -133,10 +133,10 @@ function renderFestival(): void {
     status.innerHTML = '<span class="chip chip-ok">Unlocked</span>';
     actions.innerHTML = '<button type="button" class="btn btn-night btn-big" data-play="festival">🏮 Play festival</button>';
   } else {
-    status.innerHTML = '<span class="chip chip-wait">Coming soon · payments not enabled</span>';
+    status.innerHTML = '<span class="chip chip-wait">Coming soon</span>';
     actions.innerHTML =
       '<button type="button" class="btn btn-night" disabled aria-describedby="fest-why">🔒 Unlock festival</button>';
-    why.textContent = festival.reason || why.textContent;
+    why.textContent = 'The festival isn’t available yet. We’ll announce it here when it is.';
   }
 }
 
