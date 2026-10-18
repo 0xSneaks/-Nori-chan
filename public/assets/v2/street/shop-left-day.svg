@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="340" viewBox="0 0 64 340" role="img">
+  <title>shop-left-day</title>
+  
+  <rect width="64" height="340" fill="#ffe3ee"/>
+  <rect x="0" y="0" width="64" height="8" fill="#d79a62"/>
+  <rect x="0" y="332" width="64" height="8" fill="#d79a62"/>
+  
+  <rect x="8" y="36" width="48" height="28" rx="4" fill="#e8504a" stroke="#4a3036" stroke-width="3"/>
+       <text x="32" y="56" text-anchor="middle" font-family="IPAGothic, IPAゴシック, serif" font-size="16" fill="#fff6e8">寿</text>
+  <rect x="10" y="120" width="44" height="56" rx="4" fill="#fff6e8" stroke="#4a3036" stroke-width="3"/>
+  <path d="M12 148 h40 M32 122 v52" stroke="#4a3036" stroke-width="2" opacity="0.35"/>
+  <rect x="16" y="196" width="32" height="46" rx="3" fill="#d79a62" stroke="#4a3036" stroke-width="3"/>
+  <rect x="8" y="260" width="48" height="54" rx="4" fill="#fff" stroke="#4a3036" stroke-width="3"/>
+  <circle cx="32" cy="286" r="8" fill="#e8504a"/>
+  
+
+</svg>

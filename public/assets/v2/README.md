@@ -1,15 +1,35 @@
-# Graphics handoff
+# public/assets/v2
 
-## Koinu reference
+Drop-in art for issue #8. Wire the **PNG** files. SVGs are the ink-art source. Japanese in the PNGs is already drawn, so it does not depend on a webfont.
 
-- `koinu.png`: 512×512 RGBA PNG with a transparent background.
-- Source: the owner's supplied screenshot of the round orange puppy, uploaded October 17, 2026.
-- The earlier exported crop was unavailable in this session. This file is a newly recreated, AI-assisted background extraction from that screenshot, resized to 512×512. It is not the earlier export or a pixel-identical crop; fine details may differ. Compare against the supplied reference before deriving animation frames.
-- This is the reference handoff for Grok and Claude under issue #8. It is not wired into the live site or game yet.
+No ticker is drawn on any file. The ticker, when copy needs a name, is **$Nori-Chan**.
 
-## Current owner decisions
+`koinu.png` (512×512) is the reference already on this branch: the owner's round orange puppy. Do not replace it.
 
-- Brand: Nori-chan × Koinu. Ticker: **$Nori-Chan**.
-- No published $Nori-Chan mint or buy link. The KOINU reference address is not its mint.
-- PR #6 merged to `main` at `c5945d9`; deployment status and access checks belong on issue #1.
-- No ticker text on graphics unless the owner specifically asks for it.
+| PNG | Size | Replaces |
+| --- | --- | --- |
+| nori-chan.png | 1024×1280 | `public/assets/nori-chan.svg` |
+| koinu/idle.png, koinu/roll-1.png … roll-4.png | 256×256 | in-game Koinu. Same puppy as `koinu.png`. Roll-1 and roll-3 squash; roll-2 and roll-4 turn ±14°. |
+| sushi/maguro salmon tamago maki ikura golden .png | 128×128 | `drawSushi` |
+| hazards/wasabi.png, crate.png | 128×128 | wasabi, fish crate (魚) |
+| hazards/cart.png | 160×200 | yatai. Taller than the crate. Noren says すし. |
+| powerups/bell.png, clock.png | 128×128 | すず, +3 |
+| street/shop-left-day.png, shop-right-day.png | 64×340 | day lane edges. Top and bottom bands match so the strip can repeat. |
+| street/shop-left-night.png, shop-right-night.png | 64×340 | 夜桜まつり edges, lantern lit |
+| street/stone-day.png, stone-night.png | 128×128 | center path. Grout meets the tile edge. |
+| share.png | 1200×630 | OG image. Title is こいぬコロコロ！ Filled background. No ticker, no price. |
+| live-board.png | 1400×900 | kitchen-board mockup |
+
+Sprites other than the share image and the board have transparent backgrounds.
+
+## Koinu
+
+Idle and the four roll frames are resized and transformed from `koinu.png`. They are not a new cartoon dog. The rest of the set stays ink-outline so it still reads at 40px. The photo puppy still reads as a round face at 40px.
+
+## Live board
+
+Indigo noren with 寿司, one paper column per seat (Claude, Codex, Grok, Muse), blank tickets, status 準備中. Pink headers, cream paper, ink rules. No prices and no ticker.
+
+## Palette
+
+Ink `#4a3036`. Cream `#fff6e8`. Pink `#ff9fbf`. Matcha `#8fb573`. Wood `#d79a62`. Nori green `#2f4a2e`. The puppy's orange is the reference photo, not this palette.

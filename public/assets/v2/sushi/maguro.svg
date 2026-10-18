@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img">
+  <title>maguro</title>
+  
+  <ellipse cx="64" cy="86" rx="40" ry="22" fill="#fff" stroke="#4a3036" stroke-width="6"/>
+  <clipPath id="t"><rect x="26" y="40" width="76" height="32" rx="14"/></clipPath>
+  <rect x="26" y="40" width="76" height="32" rx="14" fill="#ec5b5b" stroke="#4a3036" stroke-width="6"/>
+  <g clip-path="url(#t)" stroke="#f78a86" stroke-width="4" fill="none">
+        <path d="M44 40 l8 28"/><path d="M56 40 l8 28"/><path d="M68 40 l8 28"/><path d="M80 40 l8 28"/>
+      </g>
+  
+  
+  <ellipse cx="55.95" cy="92" rx="2.53" ry="3.2199999999999998" fill="#4a3036"/>
+  <ellipse cx="72.05" cy="92" rx="2.53" ry="3.2199999999999998" fill="#4a3036"/>
+  <circle cx="56.87" cy="90.85" r="0.9199999999999999" fill="#fff"/>
+  <circle cx="72.97" cy="90.85" r="0.9199999999999999" fill="#fff"/>
+  <path d="M59.4 95.68 q4.6 4.6 9.2 0" fill="none" stroke="#4a3036" stroke-width="1.8399999999999999" stroke-linecap="round"/>
+  <ellipse cx="50.2" cy="95.45" rx="3.6799999999999997" ry="2.07" fill="#ff8096" opacity="0.7"/>
+  <ellipse cx="77.8" cy="95.45" rx="3.6799999999999997" ry="2.07" fill="#ff8096" opacity="0.7"/>
+
+
+</svg>

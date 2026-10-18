@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img">
+  <title>ikura</title>
+  
+  <rect x="22" y="58" width="84" height="40" rx="16" fill="#2f4a2e" stroke="#4a3036" stroke-width="6"/>
+  <circle cx="40" cy="48" r="12" fill="#ff7b2e" stroke="#4a3036" stroke-width="4"/><circle cx="37" cy="45" r="3" fill="#fff" opacity="0.85"/><circle cx="64" cy="42" r="12" fill="#ff7b2e" stroke="#4a3036" stroke-width="4"/><circle cx="61" cy="39" r="3" fill="#fff" opacity="0.85"/><circle cx="88" cy="48" r="12" fill="#ff7b2e" stroke="#4a3036" stroke-width="4"/><circle cx="85" cy="45" r="3" fill="#fff" opacity="0.85"/><circle cx="52" cy="36" r="12" fill="#ff7b2e" stroke="#4a3036" stroke-width="4"/><circle cx="49" cy="33" r="3" fill="#fff" opacity="0.85"/><circle cx="76" cy="36" r="12" fill="#ff7b2e" stroke="#4a3036" stroke-width="4"/><circle cx="73" cy="33" r="3" fill="#fff" opacity="0.85"/>
+  
+  <ellipse cx="56.65" cy="78" rx="2.3100000000000005" ry="2.94" fill="#4a3036"/>
+  <ellipse cx="71.35" cy="78" rx="2.3100000000000005" ry="2.94" fill="#4a3036"/>
+  <circle cx="57.49" cy="76.95" r="0.8400000000000001" fill="#fff"/>
+  <circle cx="72.19" cy="76.95" r="0.8400000000000001" fill="#fff"/>
+  <path d="M59.8 81.36 q4.2 4.2 8.4 0" fill="none" stroke="#4a3036" stroke-width="1.6800000000000002" stroke-linecap="round"/>
+  <ellipse cx="51.4" cy="81.15" rx="3.3600000000000003" ry="1.8900000000000001" fill="#ff8096" opacity="0.7"/>
+  <ellipse cx="76.6" cy="81.15" rx="3.3600000000000003" ry="1.8900000000000001" fill="#ff8096" opacity="0.7"/>
+
+
+</svg>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1280" viewBox="0 0 1024 1280" role="img">
+  <title>Nori-chan</title>
+  
+  <ellipse cx="512" cy="1210" rx="280" ry="36" fill="#4a3036" opacity="0.13"/>
+  <path d="M250 430 q-20 250 90 390 h360 q110 -140 90 -390 q-140 -40 -270 -20 q-140 -20 -270 20z" fill="#2b2547" stroke="#4a3036" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M300 760 q-70 140 -60 400 h540 q10 -260 -60 -400 q-180 -70 -420 0z" fill="#ff9fbf" stroke="#4a3036" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M430 820 l84 150 l84 -150" fill="none" stroke="#fff6e8" stroke-width="28" stroke-linecap="round"/>
+  <path d="M430 820 l84 150 l84 -150" fill="none" stroke="#4a3036" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#fff6e8">
+    <circle cx="360" cy="1088" r="16"/><circle cx="668" cy="1064" r="16"/>
+    <circle cx="400" cy="1140" r="10"/><circle cx="640" cy="1136" r="10"/>
+    <circle cx="470" cy="1164" r="8"/><circle cx="590" cy="1156" r="8"/>
+  </g>
+  <path d="M390 980 h250 l22 200 h-294z" fill="#8fb573" stroke="#4a3036" stroke-width="14" stroke-linejoin="round"/>
+  <text x="515" y="1105" text-anchor="middle" font-family="IPAGothic, IPAゴシック, sans-serif" font-size="78" font-weight="700" fill="#fff6e8">のり</text>
+  <rect x="378" y="948" width="276" height="46" rx="16" fill="#e8504a" stroke="#4a3036" stroke-width="10"/>
+  <ellipse cx="300" cy="980" rx="48" ry="40" fill="#ffe3cf" stroke="#4a3036" stroke-width="12"/>
+  <ellipse cx="724" cy="980" rx="48" ry="40" fill="#ffe3cf" stroke="#4a3036" stroke-width="12"/>
+  <rect x="250" y="900" width="524" height="70" rx="18" fill="#d79a62" stroke="#4a3036" stroke-width="12"/>
+  <rect x="290" y="962" width="36" height="36" fill="#b07345" stroke="#4a3036" stroke-width="8"/>
+  <rect x="698" y="962" width="36" height="36" fill="#b07345" stroke="#4a3036" stroke-width="8"/>
+  <g stroke="#4a3036" stroke-width="10">
+    <ellipse cx="360" cy="888" rx="62" ry="34" fill="#fff"/>
+    <rect x="306" y="828" width="108" height="48" rx="22" fill="#e8504a"/>
+    <ellipse cx="512" cy="888" rx="62" ry="34" fill="#fff"/>
+    <rect x="458" y="828" width="108" height="48" rx="22" fill="#ff9a62"/>
+    <ellipse cx="664" cy="888" rx="62" ry="34" fill="#fff"/>
+    <rect x="610" y="828" width="108" height="48" rx="22" fill="#ffd65c"/>
+    <rect x="650" y="828" width="22" height="78" fill="#2f4a2e"/>
+  </g>
+  <rect x="470" y="690" width="84" height="70" fill="#ffe3cf"/>
+  <ellipse cx="512" cy="470" rx="250" ry="230" fill="#ffe3cf" stroke="#4a3036" stroke-width="14"/>
+  <path d="M270 490 q10 -250 242 -260 q232 10 242 260 q-50 -40 -80 -110 q-30 70 -100 78 q20 -40 8 -80 q-50 80 -150 88 q30 -30 22 -78 q-60 60 -184 102z" fill="#2b2547" stroke="#4a3036" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M268 470 q-10 140 30 230 q36 -70 20 -210z" fill="#2b2547" stroke="#4a3036" stroke-width="12"/>
+  <path d="M756 470 q10 140 -30 230 q-36 -70 -20 -210z" fill="#2b2547" stroke="#4a3036" stroke-width="12"/>
+  <path d="M290 360 q222 -110 444 0 l-6 46 q-214 -100 -432 0z" fill="#fff" stroke="#4a3036" stroke-width="12"/>
+  <circle cx="512" cy="318" r="26" fill="#e8504a" stroke="#4a3036" stroke-width="10"/>
+  <path d="M748 390 q70 -20 96 -78 q-16 74 -84 108z" fill="#fff" stroke="#4a3036" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M756 404 q78 16 110 74 q-70 -16 -116 -48z" fill="#fff" stroke="#4a3036" stroke-width="10" stroke-linejoin="round"/>
+  <rect x="330" y="430" width="70" height="30" rx="8" fill="#2f4a2e" stroke="#4a3036" stroke-width="8" transform="rotate(-18 365 445)"/>
+  <ellipse cx="420" cy="500" rx="36" ry="46" fill="#4a3036"/>
+  <ellipse cx="604" cy="500" rx="36" ry="46" fill="#4a3036"/>
+  <circle cx="432" cy="484" r="14" fill="#fff"/><circle cx="616" cy="484" r="14" fill="#fff"/>
+  <circle cx="408" cy="516" r="7" fill="#fff"/><circle cx="592" cy="516" r="7" fill="#fff"/>
+  <ellipse cx="360" cy="570" rx="36" ry="20" fill="#ff8096" opacity="0.55"/>
+  <ellipse cx="664" cy="570" rx="36" ry="20" fill="#ff8096" opacity="0.55"/>
+  <path d="M470 560 q42 48 84 0 q-42 16 -84 0z" fill="#ff7a8a" stroke="#4a3036" stroke-width="8" stroke-linejoin="round"/>
+
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img">
+  <title>clock</title>
+  
+  <circle cx="58" cy="68" r="40" fill="#fff6e8" stroke="#ff9fbf" stroke-width="10"/>
+  <circle cx="58" cy="68" r="40" fill="none" stroke="#4a3036" stroke-width="4"/>
+  <path d="M58 68 V46 M58 68 L74 76" fill="none" stroke="#4a3036" stroke-width="5" stroke-linecap="round"/>
+  <text x="96" y="40" text-anchor="middle" font-family="IPAGothic, IPAゴシック, sans-serif" font-size="28" font-weight="700" fill="#e8504a">+3</text>
+
+</svg>

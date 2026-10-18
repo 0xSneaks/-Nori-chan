@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img">
+  <title>maki</title>
+  
+  <circle cx="64" cy="64" r="46" fill="#2f4a2e" stroke="#4a3036" stroke-width="6"/>
+  <circle cx="64" cy="64" r="34" fill="#fff"/>
+  <ellipse cx="64" cy="52" rx="16" ry="12" fill="#ff8fa3"/>
+  <ellipse cx="52" cy="58" rx="7" ry="6" fill="#7cc26a"/>
+  
+  <ellipse cx="56.65" cy="74" rx="2.3100000000000005" ry="2.94" fill="#4a3036"/>
+  <ellipse cx="71.35" cy="74" rx="2.3100000000000005" ry="2.94" fill="#4a3036"/>
+  <circle cx="57.49" cy="72.95" r="0.8400000000000001" fill="#fff"/>
+  <circle cx="72.19" cy="72.95" r="0.8400000000000001" fill="#fff"/>
+  <path d="M59.8 77.36 q4.2 4.2 8.4 0" fill="none" stroke="#4a3036" stroke-width="1.6800000000000002" stroke-linecap="round"/>
+  <ellipse cx="51.4" cy="77.15" rx="3.3600000000000003" ry="1.8900000000000001" fill="#ff8096" opacity="0.7"/>
+  <ellipse cx="76.6" cy="77.15" rx="3.3600000000000003" ry="1.8900000000000001" fill="#ff8096" opacity="0.7"/>
+
+
+</svg>
