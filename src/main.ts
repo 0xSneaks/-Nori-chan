@@ -3,6 +3,7 @@ import { GameHost } from './game/game';
 import { HighScores, browserStore } from './game/storage';
 import { drawBell, drawCart, drawClock, drawCrate, drawKoinu, drawSushi, drawWasabi } from './game/sprites';
 import type { SushiKind } from './game/config';
+import { loadKoinuArt, preloadSprites, sprite, type SpriteKey } from './game/assets';
 import { createEntitlements, type EntitlementStatus } from './premium/entitlements';
 import { startSakura } from './site/sakura';
 
@@ -85,6 +86,21 @@ function paintIcons(): void {
     const icon = c.dataset.icon ?? '';
     const s = size / 56;
     ctx.setTransform(dpr * s, 0, 0, dpr * s, 0, 0);
+    const pack: Record<string, [SpriteKey, number]> = {
+      maguro: ['sushi-maguro', 44], ikura: ['sushi-ikura', 44], golden: ['sushi-golden', 52],
+      bell: ['bell', 48], clock: ['clock', 42], crate: ['crate', 50], wasabi: ['wasabi', 46],
+    };
+    const p = pack[icon];
+    const im = p ? sprite(p[0]) : null;
+    if (p && im) {
+      ctx.drawImage(im, 28 - p[1] / 2, 28 - p[1] / 2, p[1], p[1]);
+      return;
+    }
+    const cartIm = icon === 'cart' ? sprite('cart') : null;
+    if (cartIm) {
+      ctx.drawImage(cartIm, 8, 3, 40, 50);
+      return;
+    }
     switch (icon) {
       case 'wasabi':
         drawWasabi(ctx, 28, 32, 0.3);
@@ -106,7 +122,7 @@ function paintIcons(): void {
         drawClock(ctx, 26, 30, 0);
         break;
       case 'koinu':
-        drawKoinu(ctx, 28, 36, { t: 0, roll: 0, z: 0, stunned: false, jumping: false, costume: 'hachimaki' }, 0.8);
+        drawKoinu(ctx, 28, 36, { t: 0, roll: 0, z: 0, stunned: false, jumping: false, costume: 'none', art: loadKoinuArt() }, 0.8);
         break;
       default:
         drawSushi(ctx, icon as SushiKind, 28, 30, 0.4);
@@ -114,6 +130,9 @@ function paintIcons(): void {
   });
 }
 document.fonts?.ready.then(paintIcons).catch(paintIcons);
+// Repaint the Koinu icon once the original art has loaded.
+loadKoinuArt(paintIcons);
+preloadSprites(paintIcons);
 paintIcons();
 
 // Festival status

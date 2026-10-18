@@ -218,6 +218,7 @@ export class GameHost {
       if (this.world.finished) this.gameOver();
     }
 
+    if (!this.renderer.koinuArt) this.renderer.koinuArt = loadKoinuArt();
     this.renderer.render(this.world, Math.min(0.05, dt), this.phase === 'playing');
     this.raf = requestAnimationFrame((t) => this.loop(t));
   }

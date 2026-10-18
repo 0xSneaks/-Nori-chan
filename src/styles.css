@@ -364,7 +364,7 @@ h1 {
   position: absolute;
   top: 8%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -62%);
   display: flex;
   gap: 4px;
   z-index: 1;
@@ -403,16 +403,6 @@ h1 {
   width: 100%;
   height: auto;
   animation: roll 2.2s ease-in-out infinite;
-}
-.temp-tag {
-  display: inline-block;
-  margin-top: -6px;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 800;
-  background: #fff36b;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
 }
 @keyframes bob {
   50% {
@@ -477,7 +467,7 @@ h1 {
     right: 8%;
   }
   .noren {
-    top: 9%;
+    top: 10%;
   }
   .noren span {
     width: 30px;

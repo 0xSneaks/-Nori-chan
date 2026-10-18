@@ -24,6 +24,7 @@ import {
   INK,
 } from './sprites';
 import { multiplierFor } from './scoring';
+import { preloadSprites, sprite, type SpriteKey } from './assets';
 import type { World } from './world';
 
 interface Particle {
@@ -105,6 +106,7 @@ export class Renderer {
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) throw new Error('Canvas 2D not supported');
     this.ctx = ctx;
+    preloadSprites();
     this.seedAmbient();
   }
 
@@ -283,6 +285,22 @@ export class Renderer {
     ctx.fillRect(STREET_LEFT, top, 6, fullH);
     ctx.fillRect(STREET_RIGHT - 6, top, 6, fullH);
 
+    const stone = sprite(this.night ? 'stone-night' : 'stone-day');
+    if (stone) {
+      const tile = 64;
+      const off = world.distance % tile;
+      const startY = -Math.ceil(this.extra / tile) * tile - tile + off;
+      for (let y = startY; y < VIEW_H + tile; y += tile) {
+        for (let x = STREET_LEFT; x < STREET_RIGHT; x += tile) {
+          const w = Math.min(tile, STREET_RIGHT - x);
+          ctx.drawImage(stone, 0, 0, (128 * w) / tile, 128, x, y, w, tile);
+        }
+      }
+      ctx.fillStyle = this.night ? 'rgba(20,16,40,0.18)' : 'rgba(255,246,232,0.25)';
+      ctx.fillRect(STREET_LEFT, top, STREET_RIGHT - STREET_LEFT, fullH);
+      return;
+    }
+
     // Stepping stones on lane dividers, scrolling with distance.
     const spacing = 46;
     const off = world.distance % spacing;
@@ -305,6 +323,17 @@ export class Renderer {
 
   private drawShops(world: World, pal: typeof DAY, side: 'left' | 'right'): void {
     const ctx = this.ctx;
+    const strip = sprite(`shop-${side}-${this.night ? 'night' : 'day'}` as SpriteKey);
+    if (strip) {
+      // 64×340 strip scaled to the 45px edge; repeats vertically and scrolls with the street.
+      const h = (340 * STREET_LEFT) / 64;
+      const off = world.distance % h;
+      const x0 = side === 'left' ? 0 : STREET_RIGHT;
+      for (let y = -Math.ceil(this.extra / h) * h - h + off; y < VIEW_H + h; y += h) {
+        ctx.drawImage(strip, x0, y, STREET_LEFT, h);
+      }
+      return;
+    }
     const seg = 170;
     const off = world.distance % seg;
     const baseIdx = Math.floor(world.distance / seg);
@@ -370,25 +399,52 @@ export class Renderer {
           ctx.beginPath();
           ctx.ellipse(e.x, e.y + 14, 13, 4, 0, 0, Math.PI * 2);
           ctx.fill();
-          drawSushi(ctx, e.sushi, e.x, e.y + bob, t + e.phase);
+          if (!this.img(`sushi-${e.sushi}` as SpriteKey, e.x, e.y + bob, e.sushi === 'golden' ? 52 : 40)) {
+            drawSushi(ctx, e.sushi, e.x, e.y + bob, t + e.phase);
+          }
           break;
         case 'wasabi':
-          drawWasabi(ctx, e.x, e.y, t + e.phase);
+          if (!this.img('wasabi', e.x, e.y - 2, 46)) drawWasabi(ctx, e.x, e.y, t + e.phase);
           break;
         case 'crate':
-          drawCrate(ctx, e.x, e.y);
+          if (!this.img('crate', e.x, e.y + 2, 60)) drawCrate(ctx, e.x, e.y);
           break;
         case 'cart':
-          drawCart(ctx, e.x, e.y, t, this.night);
+          // Pack cart is 160×200; draw 80×100 so its base sits on the 72×58 hitbox and the roof reads tall.
+          if (!this.imgRect('cart', e.x, e.y - 18, 80, 100)) drawCart(ctx, e.x, e.y, t, this.night);
           break;
         case 'bell':
-          drawBell(ctx, e.x, e.y + bob, t);
+          if (!this.img('bell', e.x, e.y + bob, 46, Math.sin(t * 7) * 0.2)) drawBell(ctx, e.x, e.y + bob, t);
           break;
         case 'clock':
-          drawClock(ctx, e.x, e.y, t);
+          if (!this.img('clock', e.x, e.y + Math.sin(t * 5) * 2, 40)) drawClock(ctx, e.x, e.y, t);
           break;
       }
     }
+  }
+
+  private imgRect(key: SpriteKey, x: number, y: number, w: number, h: number): boolean {
+    const im = sprite(key);
+    if (!im) return false;
+    this.ctx.drawImage(im, x - w / 2, y - h / 2, w, h);
+    return true;
+  }
+
+  /** Draw a pack sprite centered at (x, y), `size` px square. Returns false if not loaded yet. */
+  private img(key: SpriteKey, x: number, y: number, size: number, rot = 0): boolean {
+    const im = sprite(key);
+    if (!im) return false;
+    const ctx = this.ctx;
+    if (rot) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.drawImage(im, -size / 2, -size / 2, size, size);
+      ctx.restore();
+    } else {
+      ctx.drawImage(im, x - size / 2, y - size / 2, size, size);
+    }
+    return true;
   }
 
   private drawPlayer(world: World): void {
